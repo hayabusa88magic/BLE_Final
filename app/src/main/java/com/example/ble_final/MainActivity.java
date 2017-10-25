@@ -8,6 +8,8 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import java.util.Timer;
 import java.util.UUID;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,9 +27,10 @@ import android.bluetooth.*;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "BLE_Connect";
+
     BleCliant BleC = new BleCliant();
     BleServer BleS = new BleServer();
-
+    UtilTimerTest tester = new UtilTimerTest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 //        スタートボタンの探索
+
         findViewById(R.id.btn_start).setOnClickListener(new View.OnClickListener() {
 
             @Override
