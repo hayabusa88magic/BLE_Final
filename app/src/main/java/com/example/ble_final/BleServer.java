@@ -8,7 +8,7 @@ import android.bluetooth.BluetoothGattCharacteristic;
 import android.os.Build;
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
-    public class BleServer extends BluetoothGattServerCallback {
+     public class BleServer extends BluetoothGattServerCallback {
 
         //BLE
         private BluetoothGattServer bluetoothGattServer;
@@ -38,4 +38,4 @@ import android.os.Build;
             bluetoothGattServer.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, offset, null);
         }
     }
-}
+

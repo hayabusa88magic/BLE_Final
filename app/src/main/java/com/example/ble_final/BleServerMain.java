@@ -80,7 +80,7 @@ public class BleServerMain extends AdvertiseCallback {
     //GattServerを取得
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     private BluetoothGattServer getGattServer(Context context, BluetoothManager manager) {
-        return manager.openGattServer(context, new BLEServer(gattServer));
+        return manager.openGattServer(context, new BleServer(gattServer));
     }
 
     //UUIDを設定

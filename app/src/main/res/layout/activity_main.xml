@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text_status"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ble_final.MainActivity">
@@ -30,5 +31,13 @@
         android:text="stop"
         tools:layout_editor_absoluteX="118dp"
         tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="189dp"
+        android:layout_height="18dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="74dp" />
 
 </android.support.constraint.ConstraintLayout>

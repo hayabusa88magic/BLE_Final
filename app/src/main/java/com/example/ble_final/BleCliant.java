@@ -52,7 +52,6 @@ public class BleCliant extends Activity implements BluetoothAdapter.LeScanCallba
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         mBluetoothManager = (BluetoothManager)getSystemService(BLUETOOTH_SERVICE);
         mBluetoothAdapter = mBluetoothManager.getAdapter();
@@ -181,23 +180,11 @@ public class BleCliant extends Activity implements BluetoothAdapter.LeScanCallba
 
             if (DEVICE_BUTTON_SENSOR_CHARACTERISTIC_UUID.equals(characteristic.getUuid().toString())) {
                 Byte value = characteristic.getValue()[0];
-                boolean left = (0 < (value & 0x02));
-                boolean right = (0 < (value & 0x01));
-                updateButtonState(left, right);
+
             }
         }
     };
 
-    private void updateButtonState(final boolean left, final boolean right) {
-        runOnUiThread(new Runnable() {
-            @Override public void run() {
-                View leftView = findViewById(R.id.left);
-                View rightView = findViewById(R.id.right);
-                leftView.setBackgroundColor( (left ? Color.BLUE : Color.TRANSPARENT) );
-                rightView.setBackgroundColor( (right ? Color.BLUE : Color.TRANSPARENT) );
-            }
-        });
-    }
 
 
     private void setStatus(BleStatus status) {
