@@ -41,7 +41,7 @@ public class BleCliant extends Activity implements BluetoothAdapter.LeScanCallba
     private BleStatus mStatus = BleStatus.DISCONNECTED;
 
 
-    private Handler mHandler;
+    public Handler mHandler;
     private BluetoothAdapter mBluetoothAdapter;
 
     private BluetoothManager mBluetoothManager;
@@ -56,10 +56,6 @@ public class BleCliant extends Activity implements BluetoothAdapter.LeScanCallba
 
         mBluetoothManager = (BluetoothManager)getSystemService(BLUETOOTH_SERVICE);
         mBluetoothAdapter = mBluetoothManager.getAdapter();
-
-        connect();
-        disconnect();
-
 
         mStatusText = (TextView)findViewById(R.id.text_status);
 
@@ -76,7 +72,7 @@ public class BleCliant extends Activity implements BluetoothAdapter.LeScanCallba
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mBluetoothAdapter.stopLeScan(MainActivity.this);
+                mBluetoothAdapter.stopLeScan(BleCliant.this);
                 if (BleStatus.SCANNING.equals(mStatus)) {
                     setStatus(BleStatus.SCAN_FAILED);
                 }

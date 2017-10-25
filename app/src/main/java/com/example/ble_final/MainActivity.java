@@ -20,6 +20,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.bluetooth.*;
 
+
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "BLE_Connect";
@@ -37,10 +39,20 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v){
-                BleC.connect();
+                switching();
+
+            }
+        });
+        findViewById(R.id.btn_stop).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
             }
         });
 
     }
 }
+
+    private void switching(){
+
+    }
