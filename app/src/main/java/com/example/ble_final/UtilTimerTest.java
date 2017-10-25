@@ -34,7 +34,7 @@ public class UtilTimerTest {
             /**  時刻を保持するオブジェクト */
             private Time time = null;
 
-    public static class Task extends TimerTask {
+    private static class Task extends TimerTask {
         private Time time;
 
         public Task(Time aTime) {
@@ -48,7 +48,7 @@ public class UtilTimerTest {
         }
     }
 
-    public static class Time {
+    private static class Time {
         private int second = 0;
 
         public void tick() {

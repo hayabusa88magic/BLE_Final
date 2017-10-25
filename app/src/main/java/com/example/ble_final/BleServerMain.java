@@ -1,17 +1,11 @@
 package com.example.ble_final;
 
-/**
- * Created by Shunya_F on 2017/10/25.
- */
-
 import android.annotation.TargetApi;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattServerCallback;
 import android.os.Build;
 import android.os.ParcelUuid;
-
 import java.util.UUID;
-
 import android.content.Context;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothGattServer;
