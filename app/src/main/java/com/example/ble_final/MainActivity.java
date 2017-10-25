@@ -16,20 +16,17 @@ import android.hardware.Sensor;
 import android.app.Activity;
 import android.bluetooth.*;
 
+public class MainActivity extends Activity {
 
-
-
-public class MainActivity extends AppCompatActivity {
-
-    private static final String TAG = "BLE_Connect";
-
+    private static final String TAG = "MAIN";
     BleCliant BleC = new BleCliant();
-    BleServer BleS = new BleServer();
+    BleServerMain.BleServer BleS = new BleServerMain.BleServer();
     UtilTimerTest utilTimer = new UtilTimerTest();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         findViewById(R.id.btn_start).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,3 +44,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }//oncreate
+}

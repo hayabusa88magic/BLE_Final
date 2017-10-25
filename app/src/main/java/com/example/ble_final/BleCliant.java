@@ -20,10 +20,6 @@ import android.widget.TextView;
 
 import java.util.UUID;
 
-/**
- * Created by Shunya_F on 2017/10/25.
- */
-
 public class BleCliant extends Activity implements BluetoothAdapter.LeScanCallback {
 
     private static final long SCAN_PERIOD = 10000;
@@ -48,15 +44,12 @@ public class BleCliant extends Activity implements BluetoothAdapter.LeScanCallba
     private BluetoothGatt mBluetoothGatt;
     private TextView mStatusText;
 
-    @Override
 
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        mBluetoothManager = (BluetoothManager)getSystemService(BLUETOOTH_SERVICE);
+    private void set() {
+        mBluetoothManager = (BluetoothManager) getSystemService(BLUETOOTH_SERVICE);
         mBluetoothAdapter = mBluetoothManager.getAdapter();
 
-        mStatusText = (TextView)findViewById(R.id.text_status);
+        mStatusText = (TextView) findViewById(R.id.text_status);
 
         mHandler = new Handler() {
             @Override

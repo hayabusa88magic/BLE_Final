@@ -34,4 +34,29 @@ public class UtilTimerTest {
             /**  時刻を保持するオブジェクト */
             private Time time = null;
 
+    public static class Task extends TimerTask {
+        private Time time;
+
+        public Task(Time aTime) {
+
+            time = aTime;
+        }
+
+        public void run() {
+            time.tick();
+            System.out.println("Second = " + time.getSecond());
+        }
+    }
+
+    public static class Time {
+        private int second = 0;
+
+        public void tick() {
+            second++;
+        }
+
+        public int getSecond() {
+            return second;
+        }
+    }
 } // UtilTimerTest
